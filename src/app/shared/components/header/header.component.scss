@@ -1,0 +1,13 @@
+@import '/src/variables';
+
+:host{
+    background: $darkgray;
+    padding: 20px;
+}
+.logo {
+  font-size: 22px;
+}
+.logoIcon, .shoppingBasket {
+  font-size: 30px;
+  width: auto;
+}
