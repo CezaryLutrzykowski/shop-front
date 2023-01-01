@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultModule } from './layouts/default/default.module';
 import { FullpageModule } from './layouts/fullpage/fullpage.module';
-import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
+import {FullpageadminModule} from "./layouts/fullpageadmin/fullpageadmin.module";
+
 @NgModule({
   declarations: [
     AppComponent

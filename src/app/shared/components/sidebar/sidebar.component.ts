@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  categorys = ['Kategoria 1','Kategoria 1','Kategoria 1','Kategoria 1',];
+  categorys = ['Kategoria 1','Kategoria 2','Kategoria 3','Kategoria 4',];
 
 }
