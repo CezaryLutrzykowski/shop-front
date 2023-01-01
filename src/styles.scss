@@ -1,3 +1,4 @@
+@import '/src/variables.scss';
 body,
 html{
     margin: 0;
@@ -6,3 +7,7 @@ html{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.content{
+  padding: 20px;
+  background: $lightgray;
+}
