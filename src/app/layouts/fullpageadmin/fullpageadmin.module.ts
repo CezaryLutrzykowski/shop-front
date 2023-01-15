@@ -13,6 +13,7 @@ import {
   AdminProductFormComponent
 } from "../../modules/admin/admin-product-form/admin-product-form.component";
 import {AdminMessageComponent} from "../../modules/admin/admin-message/admin-message.component";
+import {AdminConfirmDialogComponent} from "../../modules/admin/admin-confirm-dialog/admin-confirm-dialog.component";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {AdminMessageComponent} from "../../modules/admin/admin-message/admin-mes
     AdminProductUpdateComponent,
     AdminProductAddComponent,
     AdminProductFormComponent,
-    AdminMessageComponent
+    AdminMessageComponent,
+    AdminConfirmDialogComponent
   ],
   imports: [
     CommonModule,
