@@ -1,23 +1,39 @@
 @import '/src/variables';
-:host{
+
+:host {
   display: flex;
   flex-direction: column;
 }
+
 .card {
   margin: 10px;
 }
-.productImage{
+
+.productImage {
   margin-right: 10px;
 }
-.productPrice{
+
+.productPrice {
   font-size: 30px;
   font-weight: 500;
   margin-top: 20px;
   color: $warn;
 }
-.productContent{
+
+.productContent {
   font-size: 18px;
 }
+
 mat-card {
   margin: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #777;
+}
+
