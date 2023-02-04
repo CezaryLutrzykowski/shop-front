@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {ProductDetailsComponent} from "../../modules/product-details/product-details.component";
+import {CategoryComponent} from "../../modules/category/category.component";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {ProductDetailsComponent} from "../../modules/product-details/product-det
     HomeComponent,
     ProductComponent,
     DefaultComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
