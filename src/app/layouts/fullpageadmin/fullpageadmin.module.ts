@@ -8,13 +8,22 @@ import {MaterialModule} from "../../shared/material.module";
 import {AdminProductComponent} from "../../modules/admin/admin-product/admin-product.component";
 import {AdminProductUpdateComponent} from "../../modules/admin/admin-product-update/admin-product-update.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {AdminProductAddComponent} from "../../modules/admin/admin-product-add/admin-product-add.component";
-import {
-  AdminProductFormComponent
-} from "../../modules/admin/admin-product-form/admin-product-form.component";
 import {AdminMessageComponent} from "../../modules/admin/admin-message/admin-message.component";
 import {AdminConfirmDialogComponent} from "../../modules/admin/admin-confirm-dialog/admin-confirm-dialog.component";
-
+import {AdminCategoryComponent} from "../../modules/admin/admin-category/admin-category.component";
+import { AdminProductFormConponent } from 'src/app/modules/admin/admin-product/admin-product-form/admin-product-form.component';
+import {
+  AdminCategoryAddComponent
+} from "../../modules/admin/admin-category/admin-category-add/admin-category-add.component";
+import {
+  AdminCategoryUpdateComponent
+} from "../../modules/admin/admin-category/admin-category-update/admin-category-update.component";
+import {
+  AdminCategoryFormComponent
+} from "../../modules/admin/admin-category/admin-category-form/admin-category-form.component";
+import {
+  AdminProductAddComponent
+} from "../../modules/admin/admin-product/admin-product-add/admin-product-add.component";
 
 @NgModule({
   declarations: [
@@ -23,9 +32,13 @@ import {AdminConfirmDialogComponent} from "../../modules/admin/admin-confirm-dia
     AdminProductComponent,
     AdminProductUpdateComponent,
     AdminProductAddComponent,
-    AdminProductFormComponent,
+    AdminProductFormConponent,
     AdminMessageComponent,
-    AdminConfirmDialogComponent
+    AdminConfirmDialogComponent,
+    AdminCategoryComponent,
+    AdminCategoryAddComponent,
+    AdminCategoryUpdateComponent,
+    AdminCategoryFormComponent
   ],
   imports: [
     CommonModule,

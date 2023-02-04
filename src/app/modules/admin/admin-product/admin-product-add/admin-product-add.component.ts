@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {AdminProductUpdate} from "../admin-product-update/model/adminProductUpdate";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminProductAddService} from "./admin-product-add.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminMessageService} from "../admin-message.service";
-import {AdminProductUpdateService} from "../admin-product-update/admin-product-update.service";
+import {AdminMessageService} from "../../admin-message.service";
+import {AdminProductUpdateService} from "../../admin-product-update/admin-product-update.service";
+import {AdminProductUpdate} from "../../admin-product-update/model/adminProductUpdate";
 
 @Component({
   selector: 'app-admin-product-add',
@@ -33,6 +33,7 @@ export class AdminProductAddComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
+      fullDescription: [''],
       categoryId: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['PLN', Validators.required],
