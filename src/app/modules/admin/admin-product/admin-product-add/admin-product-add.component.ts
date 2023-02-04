@@ -4,8 +4,8 @@ import {AdminProductAddService} from "./admin-product-add.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AdminMessageService} from "../../admin-message.service";
-import {AdminProductUpdateService} from "../../admin-product-update/admin-product-update.service";
-import {AdminProductUpdate} from "../../admin-product-update/model/adminProductUpdate";
+import {AdminProductUpdateService} from "../admin-product-update/admin-product-update.service";
+import {AdminProductUpdate} from "../model/adminProductUpdate";
 
 @Component({
   selector: 'app-admin-product-add',

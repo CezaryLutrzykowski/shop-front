@@ -6,7 +6,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from "../../shared/material.module";
 import {AdminProductComponent} from "../../modules/admin/admin-product/admin-product.component";
-import {AdminProductUpdateComponent} from "../../modules/admin/admin-product-update/admin-product-update.component";
+import {AdminProductUpdateComponent} from "../../modules/admin/admin-product/admin-product-update/admin-product-update.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AdminMessageComponent} from "../../modules/admin/admin-message/admin-message.component";
 import {AdminConfirmDialogComponent} from "../../modules/admin/admin-confirm-dialog/admin-confirm-dialog.component";
