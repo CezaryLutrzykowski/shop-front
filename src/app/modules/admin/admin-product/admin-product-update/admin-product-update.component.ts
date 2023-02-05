@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AdminProductUpdateService} from "./admin-product-update.service";
-import {AdminProductUpdate} from "../model/adminProductUpdate";
+import {AdminProductUpdate} from "../model/AdminProductUpdate";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AdminMessageService} from "../../admin-message.service";

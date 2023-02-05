@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CategoryService} from "./category.service";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter, Subscription} from "rxjs";
-import {CategoryProducts} from "./model/categoryProducts";
+import {CategoryProducts} from "./model/CategoryProducts";
 import {PageEvent} from "@angular/material/paginator";
 
 @Component({

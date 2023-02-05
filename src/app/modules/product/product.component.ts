@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ProductService} from "./product.service";
-import {Product} from "./model/product";
-import {Page} from "../../shared/model/page";
+import {Product} from "./model/Product";
+import {Page} from "../../shared/model/Page";
 import {PageEvent} from "@angular/material/paginator";
 
 @Component({
