@@ -8,8 +8,8 @@ import {MaterialModule} from "../../shared/material.module";
 import {AdminProductComponent} from "../../modules/admin/admin-product/admin-product.component";
 import {AdminProductUpdateComponent} from "../../modules/admin/admin-product/admin-product-update/admin-product-update.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {AdminMessageComponent} from "../../modules/admin/admin-message/admin-message.component";
-import {AdminConfirmDialogComponent} from "../../modules/admin/admin-confirm-dialog/admin-confirm-dialog.component";
+import {AdminMessageComponent} from "../../modules/admin/common/componnent/admin-message/admin-message.component";
+import {AdminConfirmDialogComponent} from "../../modules/admin/common/componnent/admin-confirm-dialog/admin-confirm-dialog.component";
 import {AdminCategoryComponent} from "../../modules/admin/admin-category/admin-category.component";
 import { AdminProductFormConponent } from 'src/app/modules/admin/admin-product/admin-product-form/admin-product-form.component';
 import {

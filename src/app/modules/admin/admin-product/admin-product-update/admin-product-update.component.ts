@@ -4,7 +4,8 @@ import {AdminProductUpdateService} from "./admin-product-update.service";
 import {AdminProductUpdate} from "../model/AdminProductUpdate";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminMessageService} from "../../admin-message.service";
+import {AdminMessageService} from "../../common/service/admin-message.service";
+import {AdminProductImageService} from "../admin-product-image.service";
 
 @Component({
   selector: 'app-admin-product-update',
@@ -19,11 +20,13 @@ export class AdminProductUpdateComponent implements OnInit {
   requiredFileTypes = "image/jpeg, image/png";
   image: string | null = null;
 
-  constructor(private router: ActivatedRoute,
-              private adminProductUpdateService: AdminProductUpdateService,
-              private formBuilder: FormBuilder,
-              private snackBar: MatSnackBar,
-              private adminMessageService: AdminMessageService
+  constructor(
+    private router: ActivatedRoute,
+    private adminProductUpdateService: AdminProductUpdateService,
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
+    private adminMessageService: AdminMessageService,
+    private adminProductImageService: AdminProductImageService
   ) {
   }
 
@@ -75,7 +78,7 @@ export class AdminProductUpdateComponent implements OnInit {
   uploadFile() {
     let formData = new FormData();
     formData.append('file', this.imageForm.get('file')?.value)
-    this.adminProductUpdateService.uploadImage(formData)
+    this.adminProductImageService.uploadImage(formData)
       .subscribe(result => this.image = result.filename);
   }
 
