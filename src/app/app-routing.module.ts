@@ -22,6 +22,7 @@ import {
 import {AdminProductAddComponent} from "./modules/admin/admin-product/admin-product-add/admin-product-add.component";
 import {CategoryComponent} from "./modules/category/category.component";
 import {AdminReviewComponent} from "./modules/admin/admin-review/admin-review.component";
+import {CartComponent} from "./modules/cart/cart.component";
 
 const routes: Routes = [
   {
@@ -29,7 +30,8 @@ const routes: Routes = [
       {path: '', component: HomeComponent},
       {path: 'products', component: ProductComponent},
       {path: 'products/:slug', component: ProductDetailsComponent},
-      {path: 'categories/:slug', component: CategoryComponent}
+      {path: 'categories/:slug', component: CategoryComponent},
+      {path: 'cart', component: CartComponent}
     ]
   },
   {

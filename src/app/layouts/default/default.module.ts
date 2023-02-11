@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import {ProductDetailsComponent} from "../../modules/product-details/product-details.component";
 import {CategoryComponent} from "../../modules/category/category.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {CartComponent} from "../../modules/cart/cart.component";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProductComponent,
     DefaultComponent,
     ProductDetailsComponent,
-    CategoryComponent
+    CategoryComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
