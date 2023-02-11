@@ -18,7 +18,6 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.getProducts();
-
   }
 
   getProducts() {
@@ -26,11 +25,11 @@ export class ProductComponent {
   }
 
   onPageEvent(event: PageEvent) {
-    this.getProductPage(event.pageIndex,event.pageSize);
+    this.getProductPage(event.pageIndex, event.pageSize);
   }
 
   private getProductPage(page: number, size: number) {
-    this.productService.getProducts(page,size)
+    this.productService.getProducts(page, size)
       .subscribe(page => this.page = page);
   }
 
