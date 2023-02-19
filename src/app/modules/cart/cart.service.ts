@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {CartSummary} from "./model/CartSummary";
+import {CartSummary} from "../common/model/cart/CartSummary";
+import {CartCommonService} from "../common/service/cart-common.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,12 @@ import {CartSummary} from "./model/CartSummary";
 export class CartService {
 
   constructor(
-    private http: HttpClient
-  ) {
-  }
+    private http: HttpClient,
+    private cartCommonService: CartCommonService
+  ) { }
 
   getCart(id: number): Observable<CartSummary> {
-    return this.http.get<CartSummary>("/api/carts/" + id);
+    return this.cartCommonService.getCart(id);
   }
 
   addToCart(id: number, cartItem: any ): Observable<CartSummary> {
