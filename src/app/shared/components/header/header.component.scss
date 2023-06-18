@@ -1,13 +1,12 @@
-@import '/src/variables';
-
+@import '../../../../variables.scss';
 :host{
     background: $darkgray;
     padding: 20px;
 }
 .logo {
-  font-size: 22px;
+    font-size: 22px;
+    color: white;
 }
-.logoIcon, .shoppingBasket {
-  font-size: 30px;
-  width: auto;
+.logoIcon, .shoppingBasket{
+    font-size: 30px;
 }

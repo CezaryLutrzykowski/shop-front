@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {AdminReview} from "./model/AdminReview";
-import {MatTable} from "@angular/material/table";
-import {AdminConfirmDialogService} from "../common/service/admin-confirm-dialog.service";
-import {AdminReviewService} from "./admin-review.service";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
+import { AdminConfirmDialogService } from '../common/service/admin-confirm-dialog.service';
+import { AdminReviewService } from './admin-review.service';
+import { AdminReview } from './model/adminReview ';
 
 @Component({
   selector: 'app-admin-review',
@@ -18,7 +18,7 @@ export class AdminReviewComponent implements OnInit {
   constructor(
     private adminReviewService: AdminReviewService,
     private dialogService: AdminConfirmDialogService
-  ) { }
+    ) { }
 
   ngOnInit(): void {
     this.getReviews();
@@ -42,19 +42,19 @@ export class AdminReviewComponent implements OnInit {
 
   confirmDelete(element: AdminReview) {
     this.dialogService.openConfirmDialog('Czy chcesz usunąć tę opinię?')
-      .afterClosed()
-      .subscribe(result => {
-        if (result) {
-          this.adminReviewService.delete(element.id).subscribe(() => {
-            this.data.forEach((value, index) => {
-              if (element === value) {
-                this.data.splice(index, 1);
-                this.table.renderRows();
-              }
-            });
+    .afterClosed()
+    .subscribe(result => {
+      if (result) {
+        this.adminReviewService.delete(element.id).subscribe(() => {
+          this.data.forEach((value, index) => {
+            if (element === value) {
+              this.data.splice(index, 1);
+              this.table.renderRows();
+            }
           });
-        }
-      });
+        });
+      }
+    });
   }
 
   getReviews() {

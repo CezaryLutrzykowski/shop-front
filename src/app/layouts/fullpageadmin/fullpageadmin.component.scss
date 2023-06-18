@@ -1,27 +1,24 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-
-.content {
-  padding: 20px;
-  background: #f9f9f9;
+.content{
+    background: #f9f9f9;
+    padding: 20px;
 }
-
-header {
-  background: #292b31;
-  padding: 20px;
-  color: #fff;
-}
-
-.sidebar {
-  background: #292b31;
-  padding: 20px;
-  a {
+header{
+    background: #292b31;
+    padding: 20px;
     color: #fff;
-  }
+}
+.sidebar{
+    background: #292b31;
+    padding: 20px;
+    a{
+        color: #fff;
+    }
 }
 .subMenuLink{
-  color: gray;
+    color: gray;
 }

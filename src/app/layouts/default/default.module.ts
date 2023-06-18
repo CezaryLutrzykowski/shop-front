@@ -6,23 +6,23 @@ import { ProductComponent } from 'src/app/modules/product/product.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
-import {ProductDetailsComponent} from "../../modules/product-details/product-details.component";
-import {CategoryComponent} from "../../modules/category/category.component";
-import {ReactiveFormsModule} from "@angular/forms";
-import {CartComponent} from "../../modules/cart/cart.component";
-import {OrderComponent} from "../../modules/order/order.component";
-
+import { ProductDetailsComponent } from 'src/app/modules/product-details/product-details.component';
+import { CategoryComponent } from 'src/app/modules/category/category.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from 'src/app/modules/cart/cart.component';
+import { OrderComponent } from 'src/app/modules/order/order.component';
+import { ReplacePipe } from 'src/app/modules/common/pipe/preplacePipe';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     HomeComponent,
     ProductComponent,
-    DefaultComponent,
     ProductDetailsComponent,
     CategoryComponent,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    ReplacePipe
   ],
   imports: [
     CommonModule,

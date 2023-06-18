@@ -1,39 +1,27 @@
-@import '/src/variables';
-
-:host {
-  display: flex;
-  flex-direction: column;
+@import '../../../variables.scss';
+:host{
+    display: flex;
+    flex-direction: column;
 }
-
-.card {
-  margin: 10px;
+.productImage{
+    margin-right: 10px;
 }
-
-.productImage {
-  margin-right: 10px;
+.productPrice{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: $warn;
 }
-
-.productPrice {
-  font-size: 30px;
-  font-weight: 500;
-  margin-top: 20px;
-  color: $warn;
+.productContent{
+    font-size: 18px;
 }
-
-.productContent {
-  font-size: 18px;
+mat-card{
+    margin-bottom: 25px;
 }
-
-mat-card {
-  margin: 10px;
+a{
+    text-decoration: none;
+    color: black;
 }
-
-a {
-  text-decoration: none;
-  color: black;
+a:hover{
+    color: #777;
 }
-
-a:hover {
-  color: #777;
-}
-

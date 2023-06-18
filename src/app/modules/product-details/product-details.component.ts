@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductDetails} from "./model/ProductDetails";
-import {ProductDetailsService} from "./product-details.service";
-import {ActivatedRoute} from "@angular/router";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Review} from "./model/Review";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { ProductDetails } from './model/productDetails';
+import { Review } from './model/review';
+import { ProductDetailsService } from './product-details.service';
 
 @Component({
   selector: 'app-product-details',
@@ -21,14 +21,13 @@ export class ProductDetailsComponent implements OnInit {
     private router: ActivatedRoute,
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
     this.getProductDetails();
     this.reviewForm = this.formBuilder.group({
-      authorName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
-      content: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(600)]]
+      authorName: ['', [Validators.required, Validators.minLength(2)]],
+      content:  ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
@@ -39,14 +38,14 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   submit() {
-    if (this.reviewForm.valid) {
+    if(this.reviewForm.valid){
       this.productDetailsService.saveProductReview({
         authorName: this.reviewForm.get("authorName")?.value,
-        content: this.reviewForm.get("content")?.value,
+        content:  this.reviewForm.get("content")?.value,
         productId: this.product.id
       } as Review).subscribe(review => {
         this.reviewForm.reset();
-        this.snackBar.open('Dziękujemy za dodanie opinii', '', {duration: 3000, panelClass: "snack-bar-bg-color-ok"});
+        this.snackBar.open('Dziekujemy za dodanie opinii', '', { duration: 3000, panelClass: "snack-bar-bg-color-ok" });
       });
     }
   }

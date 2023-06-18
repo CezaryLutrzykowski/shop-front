@@ -1,17 +1,17 @@
 @import "../../../variables.scss";
-.description {
-  margin-top: 20px;
-  margin-bottom: 25px;
+.description, .fullDescription{
+    margin-top:20px;
+    margin-bottom: 25px;
 }
-.price {
-  font-size: 30px;
-  font-weight: 500;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: $warn;
+.price{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $warn;
 }
 .review{
-  background-color: white;
-  margin: 20px 0;
-  padding: 7px;
+    background-color: white;
+    margin: 20px 0;
+    padding: 7px;
 }

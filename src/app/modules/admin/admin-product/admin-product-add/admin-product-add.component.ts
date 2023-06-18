@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AdminProductAddService} from "./admin-product-add.service";
-import {Router} from "@angular/router";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminMessageService} from "../../common/service/admin-message.service";
-import {AdminProductUpdate} from "../model/AdminProductUpdate";
-import {AdminProductImageService} from "../admin-product-image.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { AdminMessageService } from '../../common/service/admin-message.service';
+import { AdminProductImageService } from '../admin-product-image.service';
+import { AdminProductUpdate } from '../model/adminProductUpdate';
+import { AdminProductAddService } from './admin-product-add.service';
 
 @Component({
   selector: 'app-admin-product-add',
@@ -25,9 +25,8 @@ export class AdminProductAddComponent implements OnInit {
     private router: Router,
     private snackBar: MatSnackBar,
     private adminMessageService: AdminMessageService,
-    private adminProductImageService: AdminProductImageService
-  ) {
-  }
+    private adminProductImage: AdminProductImageService
+  ) { }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -43,7 +42,6 @@ export class AdminProductAddComponent implements OnInit {
       file: ['']
     })
   }
-
 
   submit() {
     this.adminProductAddService.saveNewProduct({
@@ -65,21 +63,18 @@ export class AdminProductAddComponent implements OnInit {
       })
   }
 
-
-  uploadFile() {
+  uploadFile(){
     let formData = new FormData();
     formData.append('file', this.imageForm.get('file')?.value);
-    this.adminProductImageService.uploadImage(formData)
+    this.adminProductImage.uploadImage(formData)
       .subscribe(result => this.image = result.filename);
   }
 
-  onFileChange(event: any) {
-    if (event.target.files.length > 0) {
+  onFileChange(event: any){
+    if(event.target.files.length > 0){
       this.imageForm.patchValue({
         file: event.target.files[0]
       });
     }
   }
-
-
 }

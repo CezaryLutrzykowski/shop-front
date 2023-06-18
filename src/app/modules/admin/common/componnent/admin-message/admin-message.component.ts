@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AdminMessageService} from "../../service/admin-message.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AdminMessageService } from '../../service/admin-message.service';
 
 @Component({
   selector: 'app-admin-message',
@@ -11,27 +11,27 @@ export class AdminMessageComponent implements OnInit, OnDestroy {
   messages: Array<string> = [];
   private clickCounter: number = 0;
 
-  constructor(private adminMessageService: AdminMessageService) {
-  }
-
+  constructor(private adminMessageService: AdminMessageService) { }
+  
   ngOnInit(): void {
-    this.adminMessageService.subject.subscribe(message => {
-      this.messages = message;
-      this.clickCounter++;
-      this.timeoutCloseMessage();
+    this.adminMessageService.subject.subscribe(messages => {
+      this.messages = messages;
+      this.timeoutColseMassages();
     });
   }
-
+  
+  
   clearMessages() {
     this.messages = [];
     this.adminMessageService.clear();
   }
-
+  
   ngOnDestroy(): void {
     this.adminMessageService.subject.unsubscribe();
   }
-
-  private timeoutCloseMessage() {
+  
+  private timeoutColseMassages() {
+    this.clickCounter++;
     setTimeout(() => {
       if (this.clickCounter == 1) {
         this.clearMessages();

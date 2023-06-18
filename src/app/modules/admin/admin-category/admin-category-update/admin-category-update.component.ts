@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AdminCategoryService} from "../admin-category.service";
-import {ActivatedRoute} from "@angular/router";
-import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminMessageService} from "../../common/service/admin-message.service";
-import {AdminCategory} from "../model/AdminCategory";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { AdminMessageService } from '../../common/service/admin-message.service';
+import { AdminCategoryService } from '../admin-category.service';
+import { AdminCategory } from '../model/adminCategory';
 
 @Component({
   selector: 'app-admin-category-update',
@@ -14,15 +14,14 @@ import {AdminCategory} from "../model/AdminCategory";
 export class AdminCategoryUpdateComponent implements OnInit {
 
   categoryForm!: FormGroup;
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private adminCategoryService: AdminCategoryService,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
-    private adminMessageService: AdminMessageService
-  ) {
-  }
+    private adminMessageService: AdminMessageService,
+  ) { }
 
   ngOnInit(): void {
     this.categoryForm = this.formBuilder.group({
@@ -33,29 +32,29 @@ export class AdminCategoryUpdateComponent implements OnInit {
     this.getCategory();
   }
 
-  getCategory() {
+  getCategory(){
     this.adminCategoryService.getCategory(Number(this.route.snapshot.params['id']))
-      .subscribe(category => this.mapToFromValues(category));
+      .subscribe(category => this.mapToFormValues(category));
   }
 
-  submit() {
-    this.adminCategoryService.saveCategory(Number(this.route.snapshot.params['id']), this.categoryForm.value)
+  submit(){
+    this.adminCategoryService.saveProduct(Number(this.route.snapshot.params['id']), this.categoryForm.value)
       .subscribe({
         next: category => {
-          this.mapToFromValues(category);
-          this.snackBar.open("kategoria została zapisana", "", {duration: 3000});
+          this.mapToFormValues(category);
+          this.snackBar.open("Kategoria zostałą zapisana", "", {duration: 3000});
         },
         error: err => {
-          this.adminMessageService.addSpringErrors(err.error)
+          this.adminMessageService.addSpringErrors(err.error);
         }
       })
   }
 
-  private mapToFromValues(category: AdminCategory) {
+  private mapToFormValues(category: AdminCategory) {
     this.categoryForm.setValue({
       name: category.name,
       description: category.description,
-      slug: category.slug
+      slug: category.slug 
     });
   }
 }
